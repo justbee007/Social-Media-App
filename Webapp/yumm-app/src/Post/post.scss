@@ -1,0 +1,90 @@
+.mastdiv
+{
+    height: 300px;
+    width:400px;
+}
+
+
+
+
+.postImg{
+    margin-top: 60px;
+    width: 80% !important;
+    margin-left: 80px;
+    max-height: 500px;
+    object-fit: contain;
+    border: black !important;
+}
+.favourite{
+  margin-left: -60px !important;
+}
+.postCenter{
+    margin: 20px 0;
+}
+h4{
+  margin-left: 40px;
+}
+h2{
+  margin-left: 40px;
+}
+
+.postText{
+  margin-left: 40px;
+  margin-right: 40px;
+ 
+}
+
+.postpop {
+   //margin-left: 200px !important;
+    width: 100%;
+    border-radius: 10px;
+    //-webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    //box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    margin: 30px 0;
+  }
+  
+  .postWrapper {
+    padding: 10px;
+  }
+  
+  .postTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .postTopLeft {
+    display: flex;
+    align-items: center;
+  }
+
+  .postProfileImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .postUsername {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 10px;
+  }
+  
+  .postDate{
+      font-size: 12px;
+  }
+
+  Grid
+  {
+    margin-left: 10px;
+    // margin-right: 60px !important;
+    
+  }
+
+  .postdiv{
+    align-items: center;
+  margin-left: 150px;
+  margin-right: 250px;
+
+  }
