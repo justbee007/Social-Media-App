@@ -26,8 +26,15 @@ const app = express();
 
 
 //connecting to Mangoose database cluster
-Mongoose.connect('mongodb+srv://dart:dart@cluster0.11bgn.mongodb.net/test');
-
+// Mongoose.connect('mongodb+srv://menonabh:Kopomani12$@cluster0.e3rii1i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+Mongoose.connect('mongodb+srv://menonabh:Kopomani12$@cluster0.e3rii1i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('Connected to MongoDB');
+}).catch((error) => {
+    console.error('Error connecting to MongoDB:', error.message);
+});
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -10,6 +10,7 @@ import nodemailer from 'nodemailer';
 const errorHandler = (message, response) => {
     response.status(500);
     response.json({ error: message });
+    response.send();
 }
 //setting up response data
 const setSuccessResponse = (data, response) => {
@@ -65,38 +66,40 @@ export const getUserName = async (request,response) =>{
                         signups.password = hash;
                         const newSignup = signService.create(signups);
 
-                        response.status(200);
+                        // response.status(200);
     
-                        response.json({message:"New User Created"});
+                        // response.json({message:"New User Created"});
+                        // response.send();
                     })
 
                 })                  
             }
             //transpoter to send email using nodemailer
-            let transporter = nodemailer.createTransport({
-                host: "smtp.gmail.com",
-                port: 587,
-                secure: false, 
-                auth: {
-                  user:'yapp7395@gmail.com', 
-                  pass: 'dartyummy', 
-                },
-              });
+            // let transporter = nodemailer.createTransport({
+            //     host: "smtp.gmail.com",
+            //     port: 587,
+            //     secure: false, 
+            //     auth: {
+            //       user:'yapp7395@gmail.com', 
+            //       pass: 'dartyummy', 
+            //     },
+            //   });
             
     
-              let info = await transporter.sendMail({
-                from: '"Yumm App" <yapp7395@gmail.com>', // sender address
-                to: email, // list of receivers
-                subject: " Your Yumm account is created successfully", // Subject line
-                text: "Your email has been successfully registered please longin to Yumm app feed your cravings", 
-              });
+            //   let info = await transporter.sendMail({
+            //     from: '"Yumm App" <yapp7395@gmail.com>', // sender address
+            //     to: email, // list of receivers
+            //     subject: " Your Yumm account is created successfully", // Subject line
+            //     text: "Your email has been successfully registered please longin to Yumm app feed your cravings", 
+            //   });
                       
               console.log("Message sent: %s", info.messageId);
               console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
          }
          //catching error
          catch(e){
-            errorHandler(e.message, response);
+            // response.send({message:"User not found"})
+            // errorHandler(e.message, response);
         }
     
     };
